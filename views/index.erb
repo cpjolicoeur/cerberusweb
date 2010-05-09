@@ -4,6 +4,7 @@
   <% @projects.each do |project| %>
     <li>
       <%= project.name %>
+      <a href="/projects/<%= project.name %>/feed">Feed</a>
     </li>
   <% end %>
 </ul>

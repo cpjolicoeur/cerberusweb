@@ -1,14 +1,21 @@
 <h1>Cerberus Builds</h1>
 
-<ul>
-  <% @projects.each do |project| %>
-    <li>
-      <%= project.name %>
-      <a href="/projects/<%= project.name %>/feed">Feed</a>
-    </li>
-  <% end %>
-</ul>
-
 <p>
   <a href="/server_errors">Server Errors</a>
 </p>
+
+<% @projects.each do |project| %>
+  <div class="project">
+    <h3><%= project.name %> (<a href="/projects/<%= project.name %>/feed">Feed</a>)</h3>
+
+    <p>
+      Last Build Status:
+      <% if project.status %>
+        <%= project.build_success? ? "Passed" : "Failed" %> at <%= project.built_at %>
+      <% else %>
+          No build status
+      <% end %>
+    </p>
+  </div>
+<% end %>
+

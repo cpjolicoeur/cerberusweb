@@ -6,7 +6,10 @@
 
 <% @projects.each do |project| %>
   <div class="project">
-    <h3><%= project.name %> (<a href="/projects/<%= project.name %>/feed">Feed</a>)</h3>
+    <h3>
+      <a href="/projects/<%= project.name %>"><%= project.name %></a>
+      (<a href="/projects/<%= project.name %>/feed">Feed</a>)
+    </h3>
 
     <p>
       Last Build Status:

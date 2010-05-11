@@ -8,6 +8,11 @@ get '/' do
   erb :index
 end
 
+get '/projects/:project_name' do
+  @project = CerberusProject.find(params[:project_name])
+  erb :project
+end
+
 get '/projects/:project_name/feed' do
   @project = CerberusProject.find(params[:project_name])
   @project.feed
@@ -41,6 +46,18 @@ class CerberusProject
 
   def built_at
     status && status["timestamp"]
+  end
+
+  # Cerverus using the current time in the logs along with the build
+  # status.  Since the build time in `status` might be different than
+  # the log time, just pick the last log alphabetically.
+  def last_log
+    logs = Dir[ENV['HOME'] + "/.cerberus/work/#{name}/logs/*.log"].sort
+    if logs.empty?
+      'No logs found.'
+    else
+      File.read(logs[-1])
+    end
   end
 
   def self.find(name)

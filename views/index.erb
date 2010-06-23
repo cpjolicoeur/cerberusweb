@@ -5,7 +5,7 @@
 </p>
 
 <% @projects.each do |project| %>
-  <div class="project">
+  <div class="project <%= project.build_success? ? "green" : "red" %>">
     <h3>
       <a href="/projects/<%= project.name %>"><%= project.name %></a>
       (<a href="/projects/<%= project.name %>/feed">Feed</a>)

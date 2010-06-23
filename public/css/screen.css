@@ -25,6 +25,14 @@ body {
   color: #fff;
 }
 
+div.red {
+	background-color: #FFCCCC;
+}
+
+div.green {
+	background-color: #CCFFCC;
+}
+
 #pageHeader h1 {
   font-size: 2em;
   line-height: 1.4em;

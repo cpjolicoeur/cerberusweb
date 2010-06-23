@@ -1,0 +1,55 @@
+body {
+  background-color: #aaa;
+  font-family: Verdana, sans-serif;
+  padding: 0;
+}
+
+#pageContainer {
+  margin: 0.5em 1em;
+  border: 1px solid #999;
+  background-color: #fff;
+	-webkit-border-bottom-left-radius: 0.5em;  
+	-webkit-border-bottom-right-radius: 0.5em;
+	-moz-border-radius-bottomleft: 0.5em;  
+	-moz-border-radius-bottomright: 0.5em;  
+}
+
+
+#pageHeader {
+  background-color: #205591;
+  padding: 0.5em;
+	font-family: "Gill Sans", Verdana, serif;
+}
+
+#pageHeader h1, #pageHeader h2 {
+  color: #fff;
+}
+
+#pageHeader h1 {
+  font-size: 2em;
+  line-height: 1.4em;
+  margin: 0;
+  text-shadow: 2px 2px rgba(0,0,0,.6);
+}
+
+#pageHeader h2 {
+  font-size: 1.1em;
+  line-height: 1em;
+  margin: 0;
+  font-weight: normal;
+  color: #eee;
+}
+
+
+#pageContainer div.content {
+  padding: 0.6em;
+}
+
+#pageContainer div.content h1 {
+  color: #444;
+  font-size: 1.6em;
+  margin: 0;
+  line-height: 1.2em;
+}
+
+
